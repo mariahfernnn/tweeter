@@ -18,8 +18,23 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif; /* Added font-family source sans pro */
+  width: 100%;
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+Task: Style the main element
+
+Requirements:
+- Should be only 90% of the width of its parent element
+- Should be center aligned to the body
+- Should have the same colour background as the <body> element
+*/
+.container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f4f1ec;
+
+
+}

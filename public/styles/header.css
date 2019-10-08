@@ -1,0 +1,32 @@
+/*
+Task: Style the Header
+
+Requirements:
+- Height of 400px and be 100% width of its parent container
+- The avatar should be centered verticall and horizontally:
+    - Play around with position: relative and position: absolute
+- The name should be centered below the avatar
+- Background color: Different from the nav and body
+- The background image should be a transparent pattern
+*/
+
+.header {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  height: 400px;
+  width: 100%; /* Full width */
+  align-items: center;
+  background-color: #c99f7b;
+  background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+  color: #ffffff;
+}
+
+.header h2 { /* h2 tag within the header tag*/
+  margin: 10px;
+}
+
+img.center {
+  width: 200px;
+
+}
