@@ -67,6 +67,29 @@ const renderTweets = function(tweets) {
   }
 }
 
+/*
+Task: Create an AJAX POST request that sends the form data to the server
+
+1. Listen for form submission with the submit handler
+2. Prevent the default form submission behaviour using event.preventDefault()
+
+*/
+$(function() {
+  const $input = $('#load-more-tweets');
+  $input.on('click', function () {
+    event.preventDefault(); // Prevent the default form submission behaviour
+    console.log('Tweet button clicked, performing ajax call...');
+    // $.ajax('/tweets', { method: 'POST' })
+    // .then(function (renderTweets) {
+    //   console.log('Success: ', renderTweets);
+    //   $input.replaceWith(renderTweets);
+    // });
+  });
+});
+
+
+
+
 // Load the page then render the data
 $(document).ready(function() {
 renderTweets(tweetData);
