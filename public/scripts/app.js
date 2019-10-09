@@ -81,26 +81,25 @@ $(function() {
     $("p").text($("textarea").serialize());
     console.log('Tweet button clicked, performing ajax call...');
     console.log("WHAT THE USER WROTE---->", $("textarea").serialize());
-    // $.ajax('/tweets', { method: 'POST' })
-    // .then(function (renderTweets) {
-    //   console.log('Success: ', renderTweets);
-    //   $input.replaceWith(renderTweets);
-    // });
+    $.ajax('/tweets', { method: 'POST', data: $("textarea").serialize() })
+    .then(function (renderTweets) {
+      console.log('Success: ', renderTweets);
+      $input.replaceWith(renderTweets);
+    });
   });
 });
 
 
-
-
+/*
+Task: Define a function called loadTweets that is responsible
+      for fetching tweets from the http://localhost:8080/tweets page
+*/
 // Load the page then render the data
-$(document).ready(function() {
-renderTweets(tweetData);
-})
+// $(document).ready(function() {
+//   let loadTweets = 
+  
 
-
-
-
-
-
-
-
+// })
+  
+// renderTweets(tweetData);
+// });
