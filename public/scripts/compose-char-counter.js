@@ -10,6 +10,7 @@ $(document).ready(function() { // runs a callback when the DOM is ready to be ma
     
     if (current <= 140) {
       $('#counter').text(140 - current);
+      $('#counter').css('color', 'black');
     } else if (current > 140) {
       $('#counter').text('-' + (current - 140));
       $('#counter').css('color', 'red');
