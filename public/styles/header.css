@@ -28,5 +28,8 @@ Requirements:
 
 img.center {
   width: 200px;
+}
 
+#write-new-tweet {
+  margin-left: auto;
 }
