@@ -9,7 +9,7 @@ Task: Create your CSS rules for all-tweets
   border: solid grey;
   border-radius: 25px;
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   padding: 15px;
   transition: box-shadow .3s ease-in-out;
 }
