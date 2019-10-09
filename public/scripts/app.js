@@ -59,9 +59,9 @@ $(function() {
     e.preventDefault(); // Prevent the default form submission behaviour
     
     // Validation: If the data is not empty or over 140 characters then alert the user!
-      let current = $('#textarea').val().length;
+      let current = $('#textarea').val().trim().length;
 
-      if (current <= 0) {
+      if (current === 0) {
         alert("Nothing was tweeted!");
       } else if (current > 140) {
         alert("Your tweet is too long!");
