@@ -78,7 +78,9 @@ $(function() {
   const $input = $('#load-more-tweets');
   $input.on('click', function () {
     event.preventDefault(); // Prevent the default form submission behaviour
+    $("p").text($("textarea").serialize());
     console.log('Tweet button clicked, performing ajax call...');
+    console.log("WHAT THE USER WROTE---->", $("textarea").serialize());
     // $.ajax('/tweets', { method: 'POST' })
     // .then(function (renderTweets) {
     //   console.log('Success: ', renderTweets);
