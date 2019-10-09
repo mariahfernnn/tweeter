@@ -61,10 +61,11 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and append it to the tweets container
+  let postTweets = "";
   for (let tweet of tweets) {
-    let $data = createTweetElement(tweet);
-    $('.container').append($data);
+    postTweets += createTweetElement(tweet);
   }
+  $('.container').append(postTweets);
 }
 
 /*
@@ -72,34 +73,45 @@ Task: Create an AJAX POST request that sends the form data to the server
 
 1. Listen for form submission with the submit handler
 2. Prevent the default form submission behaviour using event.preventDefault()
+3. Send the serialized data to the server  in the data field of the AJAX POST request
 
 */
+
+// Assisted by Vasiliy Klimkin(mentor)
 $(function() {
-  const $input = $('#load-more-tweets');
-  $input.on('click', function () {
-    event.preventDefault(); // Prevent the default form submission behaviour
-    $("p").text($("textarea").serialize());
+  const $form = $('#load-more-tweets');
+  $form.submit(function (e) {
+    e.preventDefault(); // Prevent the default form submission behaviour
+    $("p").text($(this).serialize());
     console.log('Tweet button clicked, performing ajax call...');
     console.log("WHAT THE USER WROTE---->", $("textarea").serialize());
-    $.ajax('/tweets', { method: 'POST', data: $("textarea").serialize() })
-    .then(function (renderTweets) {
-      console.log('Success: ', renderTweets);
-      $input.replaceWith(renderTweets);
-    });
+    $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
   });
 });
 
-
 /*
 Task: Define a function called loadTweets that is responsible
-      for fetching tweets from the http://localhost:8080/tweets page
+for fetching tweets from the http://localhost:8080/tweets page
 */
-// Load the page then render the data
-// $(document).ready(function() {
-//   let loadTweets = 
-  
+// Assisted by Ahmed Dauda (mentor)
+// Assisted by Spiro Sideris (mentor)
 
-// })
-  
-// renderTweets(tweetData);
-// });
+$(document).ready(function() {  // Load the page then render the data
+  const loadTweets = async () => {
+    try {
+      const response = await $.ajax({
+        url: '/tweets',
+        type: 'GET',
+        dataType: 'JSON'
+      })
+      console.log("WHAT IS THE RESPONSE?---->", response);
+      
+      renderTweets(response);
+
+     } catch (error) {
+    }
+  }
+  loadTweets();
+})
+
+
