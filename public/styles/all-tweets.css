@@ -1,0 +1,69 @@
+/*
+Task: Create your CSS rules for all-tweets
+*/
+
+.all-tweets {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  border: solid grey;
+  border-radius: 25px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 15px;
+  transition: box-shadow .3s ease-in-out;
+}
+
+.all-tweets:hover #user-handle {
+  visibility: visible;
+}
+
+#hover:hover {
+  box-shadow: 0 10px 10px 0 #d7853d;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+#name {
+  margin-left: 10px;
+}
+
+#user-handle {
+  margin-left: auto;
+  font-weight: normal;
+  color: lightslategray;
+  padding: 20px;
+  visibility: hidden;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  border-top: solid grey;
+  font-size: medium;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#flag {
+  margin-left: auto;
+  margin-right: 1em;
+  color: #4056A1;
+}
+
+#retweet {
+  margin-right: 1em;
+  color: #4056A1;
+}
+
+#heart {
+  color: #4056A1;
+}
+
+
+
+
+
