@@ -53,6 +53,7 @@ Task: Create an AJAX POST request that sends the form data to the server
 
 // Assisted by Vasiliy Klimkin (mentor)
 // Assisted by Spiro Sideris (mentor)
+$(document).ready(function() {
 $(function() {
   const $form = $('#load-more-tweets');
   $form.submit(function (e) {
@@ -67,8 +68,11 @@ $(function() {
         alert("Your tweet is too long!");
       }
         $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
-  });
-});
+        .then (() => {  // Refresh the page once a new tweet has been submitted
+          loadTweets();
+        })
+  })
+})
 
 /*
 Task: Define a function called loadTweets that is responsible
@@ -77,19 +81,19 @@ for fetching tweets from the http://localhost:8080/tweets page
 // Assisted by Ahmed Dauda (mentor)
 // Assisted by Spiro Sideris (mentor)
 
-$(document).ready(function() {  // Load the page then render the data
-  const loadTweets = async () => {
-    try {
-      const response = await $.ajax({
-        url: '/tweets',
-        type: 'GET',
-        dataType: 'JSON'
-      })
-      console.log("WHAT IS THE RESPONSE?---->", response);
-      
-      renderTweets(response);
-
-     } catch (error) {
+// Load the page then render the data
+const loadTweets = async () => {
+  try {
+    const response = await $.ajax({
+      url: '/tweets',
+      type: 'GET',
+      dataType: 'JSON'
+    })
+    
+    renderTweets(response);
+  
+    } catch (error) {
+      console.log(error);
     }
   }
   loadTweets();
