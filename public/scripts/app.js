@@ -45,7 +45,7 @@ const renderTweets = function(tweets) {
   $('.all-tweets').empty();
 
   for (let tweet of tweets) {
-    postTweets += createTweetElement(tweet);
+    postTweets = createTweetElement(tweet) + postTweets;
   }
   $('.all-tweets').prepend(postTweets);
 }
