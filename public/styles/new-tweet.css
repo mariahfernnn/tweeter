@@ -8,11 +8,12 @@ Task: Create your CSS rules for this component
 }
 
 .new-tweets {
-  display: flex;
-  width: 100%;
+  display: none;
 }
 
-section {
+.new-tweet-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
