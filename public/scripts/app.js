@@ -64,33 +64,31 @@ Task: Create an AJAX POST request that sends the form data to the server
 // Assisted by Spiro Sideris (mentor)
 $(document).ready(function() {
 
-/*  Task: Make the form (new-tweet section) slide up and down when the new compose button is clicked
-    - The pointer should change appearance on hover so that it is clear to the user that it is clickable
-*/
-$("#click-me").click(function () {
-  $(".new-tweets").slideToggle()
-});
+  /*  Task: Make the form (new-tweet section) slide up and down when the new compose button is clicked
+      - The pointer should change appearance on hover so that it is clear to the user that it is clickable
+  */
+  $("#click-me").click(function () {
+    $(".new-tweets").slideToggle()
+  });
 
-$(function() {
   const $form = $('#load-more-tweets');
   $form.submit(function (e) {
     e.preventDefault(); // Prevent the default form submission behaviour
     
     // Validation: If the data is not empty or over 140 characters then alert the user!
-      let current = $('#textarea').val().trim().length;
+    let current = $('#textarea').val().trim().length;
 
-      if (current === 0) {
-        alert("Nothing was tweeted!");
-      } else if (current > 140) {
-        alert("Your tweet is too long!");
-      }
-        $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
-        .then (() => {  // Refresh the page once a new tweet has been submitted
-          $("textarea").val("") // Clear text area once a new tweet has been submitted
-          loadTweets();
-        })
+    if (current === 0) {
+      alert("Nothing was tweeted!");
+    } else if (current > 140) {
+      alert("Your tweet is too long!");
+    }
+    $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
+    .then (() => {  // Refresh the page once a new tweet has been submitted
+      $("textarea").val(""); // Clear text area once a new tweet has been submitted
+      loadTweets();
+    })
   })
-})
 
 /*
 Task: Define a function called loadTweets that is responsible
@@ -100,20 +98,21 @@ for fetching tweets from the http://localhost:8080/tweets page
 // Assisted by Spiro Sideris (mentor)
 
 // Load the page then render the data
-const loadTweets = async () => {
-  try {
-    const response = await $.ajax({
-      url: '/tweets',
-      type: 'GET',
-      dataType: 'JSON'
-    })
+  const loadTweets = async () => {
+    try {
+      const response = await $.ajax({
+        url: '/tweets',
+        type: 'GET',
+        dataType: 'JSON'
+      })
 
-    renderTweets(response);
+      renderTweets(response);
   
     } catch (error) {
       console.log(error);
     }
   }
+
   loadTweets();
 });
 
