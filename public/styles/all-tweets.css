@@ -1,8 +1,8 @@
 /*
-Task: Create your CSS rules for all-tweets
+Task: Create your CSS rules for tweet
 */
 
-.all-tweets {
+.tweet {
   display: flex;
   flex-flow: column;
   width: 100%;
@@ -14,7 +14,7 @@ Task: Create your CSS rules for all-tweets
   transition: box-shadow .3s ease-in-out;
 }
 
-.all-tweets:hover #user-handle {
+.tweet:hover #user-handle {
   visibility: visible;
 }
 
