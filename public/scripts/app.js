@@ -4,21 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
  /* Task: Implement a createTweetElement function - takes in:
     1. A tweet obj
     2. Returns a tweet <article> element containing the entire HTML structure of the tweet
  */
-
 const createTweetElement = function(tweetData) {
   const markup = `
-  <section class="all-tweets" id="hover">
+  <section class="tweet" id="hover">
 <form method="GET" action="/tweets/">
   <header>
     <img class="avatar" src="${tweetData.user.avatars}">
     <span id="name">${tweetData.user.name}</span>
     <span id="user-handle">${tweetData.user.handle}</span> 
   </header>
-  <p>${tweetData.content.text}</p>
+  <p>${escape(tweetData.content.text)}</p>
   <footer class="footer">
     <span>${new Date(tweetData.created_at)}</span>
     <i class="fas fa-flag" id="flag"></i>
@@ -35,11 +39,15 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and append it to the tweets container
+  // Assisted by Michael Fich (mentor) 
   let postTweets = "";
+
+  $('.all-tweets').empty();
+
   for (let tweet of tweets) {
     postTweets += createTweetElement(tweet);
   }
-  $('.container').append(postTweets);
+  $('.all-tweets').prepend(postTweets);
 }
 
 /*
@@ -89,7 +97,7 @@ const loadTweets = async () => {
       type: 'GET',
       dataType: 'JSON'
     })
-    
+
     renderTweets(response);
   
     } catch (error) {
