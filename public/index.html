@@ -25,6 +25,8 @@
   </head>
     <script type="text/javascript" src="/scripts/compose-char-counter.js"></script>
   </head>
+    <script type="text/javascript" src="/scripts/compose-char-error.js"></script>
+  </head>
 
   <body>
 
@@ -51,9 +53,11 @@
     <main class="container">
       <div class="new-tweets">
         <section class="new-tweet">
+          <div id="error-msg-under">You didn't tweet anything!</div>
+          <div id="error-msg-over">You're over the limit!</div>
             <h2>Compose Tweet</h2>
             <form method="POST" id= "load-more-tweets">
-              <textarea name="text" id="textarea" placeholder="What are you humming about?"></textarea>
+              <textarea name="text" id="textarea" wrap="soft" placeholder="What are you humming about?"></textarea>
               <input type="submit" value="Tweet">
               <span id="counter">140</span>
             </form>

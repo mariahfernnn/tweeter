@@ -2,6 +2,14 @@
 Task: Create your CSS rules for tweet
 */
 
+#error-msg-under {
+  display: none;
+}
+
+#error-msg-over {
+  display: none;
+}
+
 .tweet {
   display: flex;
   flex-flow: column;

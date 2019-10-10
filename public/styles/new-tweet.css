@@ -23,6 +23,7 @@ textarea {
   border: none;
   border-bottom: 2px solid grey;
   resize: none;
+  overflow-wrap: break-word;
 }
 
 input[value] {
