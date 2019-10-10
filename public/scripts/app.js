@@ -34,7 +34,7 @@ const createTweetElement = function(tweetData) {
 </section>
     `;
   return markup;
-}
+};
 
 const renderTweets = function(tweets) {
   // loops through tweets
@@ -49,7 +49,7 @@ const renderTweets = function(tweets) {
     postTweets = createTweetElement(tweet) + postTweets;
   }
   $('.all-tweets').prepend(postTweets);
-}
+};
 
 /*
 Task: Create an AJAX POST request that sends the form data to the server
@@ -75,20 +75,24 @@ $(document).ready(function() {
   $form.submit(function (e) {
     e.preventDefault(); // Prevent the default form submission behaviour
     
-    // Validation: If the data is not empty or over 140 characters then alert the user!
+    /*
+    Validation: If the data is not empty or over 140 characters then alert the user!
+    - Replace alerts with JQuery calls that hide/show the error element
+    */
     let current = $('#textarea').val().trim().length;
 
     if (current === 0) {
-      alert("Nothing was tweeted!");
+      $('#error-msg-under').slideDown();
     } else if (current > 140) {
-      alert("Your tweet is too long!");
+      $('#error-msg-over').slideDown();
+    } else {
+      $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
+      .then (() => {  // Refresh the page once a new tweet has been submitted
+        $("textarea").val(""); // Clear text area once a new tweet has been submitted
+        loadTweets();
+      });
     }
-    $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
-    .then (() => {  // Refresh the page once a new tweet has been submitted
-      $("textarea").val(""); // Clear text area once a new tweet has been submitted
-      loadTweets();
-    })
-  })
+  });
 
 /*
 Task: Define a function called loadTweets that is responsible
