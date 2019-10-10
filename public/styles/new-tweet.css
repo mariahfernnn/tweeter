@@ -7,6 +7,11 @@ Task: Create your CSS rules for this component
   flex-wrap: wrap;
 }
 
+.new-tweets {
+  display: flex;
+  width: 100%;
+}
+
 section {
   width: 100%;
 }

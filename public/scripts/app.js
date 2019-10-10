@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Prevent XSS with Escaping
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -62,6 +63,14 @@ Task: Create an AJAX POST request that sends the form data to the server
 // Assisted by Vasiliy Klimkin (mentor)
 // Assisted by Spiro Sideris (mentor)
 $(document).ready(function() {
+
+/*  Task: Make the form (new-tweet section) slide up and down when the new compose button is clicked
+    - The pointer should change appearance on hover so that it is clear to the user that it is clickable
+*/
+$("#click-me").click(function () {
+  $(".new-tweets").slideToggle()
+});
+
 $(function() {
   const $form = $('#load-more-tweets');
   $form.submit(function (e) {
@@ -106,6 +115,6 @@ const loadTweets = async () => {
     }
   }
   loadTweets();
-})
+});
 
 

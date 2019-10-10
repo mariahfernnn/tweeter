@@ -32,7 +32,11 @@
     <nav class="nav-bar">
       <span style="font-family: Bungee, cursive">tweeter</span>
       <span id="write-new-tweet"><b>Write</b> a new tweet</span>
-      <i class="fas fa-hand-point-down" id="hand-point-down"></i>
+      <div class="cell">
+      <div class="toggle-button">
+        <i class="far fa-hand-point-left" id="click-me"></i>
+      </div>
+    </div>
     </nav>
 
     <header class="header">
@@ -45,6 +49,7 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div class="new-tweets">
         <section class="new-tweet">
             <h2>Compose Tweet</h2>
             <form method="POST" id= "load-more-tweets">
@@ -52,8 +57,8 @@
               <input type="submit" value="Tweet">
               <span id="counter">140</span>
             </form>
-          </section>
-
+        </section>
+      </div>
       <div class="all-tweets">
       </div>
     </main>
