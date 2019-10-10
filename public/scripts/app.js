@@ -77,6 +77,7 @@ $(function() {
       }
         $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
         .then (() => {  // Refresh the page once a new tweet has been submitted
+          $("textarea").val("") // Clear text area once a new tweet has been submitted
           loadTweets();
         })
   })
