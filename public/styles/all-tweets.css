@@ -69,6 +69,7 @@ CSS for single tweet container
   border-top: solid grey;
   font-size: medium;
   padding-top: 10px;
+  padding-left: 10px;
   padding-bottom: 10px;
 }
 
@@ -98,6 +99,7 @@ CSS for single tweet container
 }
 
 #heart {
+  margin-right: 1em;
   color: #4056A1;
   visibility: hidden;
 }
