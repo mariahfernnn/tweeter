@@ -6,8 +6,24 @@ CSS rules for error messages for under/over 140 characters
   display: none;
 }
 
+#error-msg-under {
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-left: 50px;
+  font-weight: bold;
+  color: red;
+}
+
 #error-msg-over {
   display: none;
+}
+
+#error-msg-over {
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-left: 50px;
+  font-weight: bold;
+  color: red;
 }
 
 
