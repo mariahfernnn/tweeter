@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of mobile view"]()
+!["Screenshot of hover-on-tweet and avatar profile - responsive design"](https://github.com/mariahfernnn/tweeter/blob/master/docs/responsive-hover-on-tweet-profile.png?raw=true)
 !["Screenshot of hover-on-tweet and compose box"](https://github.com/mariahfernnn/tweeter/blob/master/docs/hover-on-tweet-compose.png?raw=true)
-!["Screenshot of hover-on-tweet and avatar profile"]()
+!["Screenshot of hover-on-tweet and avatar profile"](https://github.com/mariahfernnn/tweeter/blob/master/docs/profile-left-of-tweet.png?raw=true)
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
