@@ -1,5 +1,5 @@
 /*
-Task: Create your CSS rules for tweet
+CSS rules for error messages for under/over 140 characters
 */
 
 #error-msg-under {
@@ -10,6 +10,10 @@ Task: Create your CSS rules for tweet
   display: none;
 }
 
+
+/*
+CSS for single tweet container
+*/
 .tweet {
   display: flex;
   flex-flow: column;
@@ -42,9 +46,8 @@ Task: Create your CSS rules for tweet
 #user-handle {
   margin-left: auto;
   font-weight: normal;
-  /* color: rgb(227, 10, 238); */
-  color: lightslategray;
-  /* float: right; */
+  color: #4056A1;
+  font-weight: bold;
   padding: 20px;
   visibility: hidden;
 }

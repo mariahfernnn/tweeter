@@ -24,6 +24,16 @@ body {
 }
 
 /*
+Contains the header and all tweets
+*/
+#columns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 5%;
+}
+
+/*
 Task: Style the main element
 
 Requirements:
@@ -31,13 +41,6 @@ Requirements:
 - Should be center aligned to the body
 - Should have the same colour background as the <body> element
 */
-
-#columns {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 5%;
-}
 
 .container {
   margin-top: 10%;
@@ -50,19 +53,11 @@ Requirements:
   background-color: #f4f1ec;
 }
 
-/* .header {
-  padding-left: 10px;
-} */
-
-/* .new-tweet-container {
-  padding-left: 50px;
-} */
-
 .all-tweets {
   width: 100%;
 }
 
-@media (min-width:768px) {
+@media (min-width: 600px) {
   .container {
     align-items: flex-end;
     width: 70%;

@@ -1,5 +1,5 @@
 /*
-Task: Create your CSS rules for the main container
+CSS for Compose A New Tweet Container
 */
 
 .container {
@@ -16,6 +16,7 @@ Task: Create your CSS rules for the main container
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 textarea {
@@ -25,7 +26,6 @@ textarea {
   border: none;
   border-bottom: 2px solid grey;
   resize: none;
-  overflow-wrap: break-word;
 }
 
 input[value] {
