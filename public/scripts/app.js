@@ -2,7 +2,7 @@
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+*/
 
 // Prevent XSS with Escaping
 const escape =  function(str) {
@@ -11,16 +11,12 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 
-
 /* Task: Implement a createTweetElement function - takes in:
 1. A tweet obj
 2. Returns a tweet <article> element containing the entire HTML structure of the tweet
 */
 const createTweetElement = function(tweetData) {
-  /*
-  Convert UNIX time using toLocaleString()
-  */
-  
+  //Convert UNIX time using toLocaleString()
   let date = new Date(tweetData.created_at);
   let tweetDate = date.toLocaleString().replace(/,/g, '').split(" ");
 
@@ -72,7 +68,7 @@ Task: Create an AJAX POST request that sends the form data to the server
 // Assisted by Vasiliy Klimkin (mentor)
 // Assisted by Spiro Sideris (mentor)
 $(document).ready(function() {
-
+  
   /*  Task: Make the form (new-tweet section) slide up and down when the new compose button is clicked
       - The pointer should change appearance on hover so that it is clear to the user that it is clickable
   */
