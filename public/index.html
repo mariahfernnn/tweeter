@@ -22,14 +22,11 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
     <script type="text/javascript" src="/scripts/compose-char-counter.js"></script>
   </head>
-    <script type="text/javascript" src="/scripts/compose-char-error.js"></script>
-  </head>
+  
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav class="nav-bar">
       <span style="font-family: Bungee, cursive">tweeter</span>
@@ -40,8 +37,8 @@
       </div>
     </div>
     </nav>
-
-    <header class="header">
+    <div id="columns">
+    <header class="header" class="c1">
       <div>
           <img class="center" src="/images/profile-hex.png"> 
       </div>
@@ -51,7 +48,7 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet-container">
+      <section class="new-tweet-container" class="c2">
         <div class="new-tweets">
           <div id="error-msg-under">You didn't tweet anything!</div>
           <div id="error-msg-over">You're over the limit!</div>
@@ -62,9 +59,9 @@
               <span id="counter">140</span>
             </form>
           </div>
+          <div class="all-tweets"></div>
         </section>
-      <div class="all-tweets">
-      </div>
     </main>
+  </div>
   </body>
 </html>

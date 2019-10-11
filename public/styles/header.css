@@ -15,7 +15,7 @@ Requirements:
   flex-flow: column;
   justify-content: flex-end;
   height: 400px;
-  width: 100%; /* Full width */
+  /* width: 100%; */
   align-items: center;
   background-color: #e98b18;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
@@ -34,4 +34,7 @@ img.center {
   margin-left: auto;
   margin-right: 0.50em;
 }
+
+
+
 

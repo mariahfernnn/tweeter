@@ -1,5 +1,5 @@
 /*
-Task: Create your CSS rules for this component 
+Task: Create your CSS rules for the main container
 */
 
 .container {
@@ -9,13 +9,14 @@ Task: Create your CSS rules for this component
 
 .new-tweets {
   display: none;
+
 }
 
-.new-tweet-container {
+/* .new-tweet-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+} */
 
 textarea {
   width: 100%;

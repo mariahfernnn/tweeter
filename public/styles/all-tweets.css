@@ -30,10 +30,10 @@ Task: Create your CSS rules for tweet
   box-shadow: 0 10px 10px 0 #d7853d;
 }
 
-header {
-  display: flex;
+/* header {
+  display: block;
   align-items: center;
-}
+} */
 
 #name {
   margin-left: 10px;
