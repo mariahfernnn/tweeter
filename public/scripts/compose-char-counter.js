@@ -7,7 +7,7 @@ Task: Implementthe character counter (Tweeter Assignment)
 $(document).ready(function() { // runs a callback when the DOM is ready to be manipulated with jQuery
   $('#textarea').on('keyup', function() {
     let current = $(this).val().length;
-    if (current >= 1 || current <= 140) {
+    if (current >= 1 && current <= 140) {
       $('#error-msg-under').slideUp();
       $('#error-msg-over').slideUp();
       $('#counter').text(140 - current);

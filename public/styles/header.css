@@ -12,10 +12,10 @@ Requirements:
 
 .header {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: flex-end;
   height: 400px;
-  /* width: 100%; */
+  width: 100%;
   align-items: center;
   background-color: #e98b18;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
@@ -35,6 +35,11 @@ img.center {
   margin-right: 0.50em;
 }
 
-
+@media (min-width: 768px) {
+  .header {
+    width: 30%;
+    float: left;
+  }
+}
 
 

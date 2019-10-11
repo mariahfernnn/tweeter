@@ -30,10 +30,10 @@ Task: Create your CSS rules for tweet
   box-shadow: 0 10px 10px 0 #d7853d;
 }
 
-/* header {
-  display: block;
+.tweet header {
+  display: flex;
   align-items: center;
-} */
+}
 
 #name {
   margin-left: 10px;
@@ -42,7 +42,9 @@ Task: Create your CSS rules for tweet
 #user-handle {
   margin-left: auto;
   font-weight: normal;
+  /* color: rgb(227, 10, 238); */
   color: lightslategray;
+  /* float: right; */
   padding: 20px;
   visibility: hidden;
 }

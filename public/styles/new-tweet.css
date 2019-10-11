@@ -12,11 +12,11 @@ Task: Create your CSS rules for the main container
 
 }
 
-/* .new-tweet-container {
+.new-tweet-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-} */
+}
 
 textarea {
   width: 100%;
