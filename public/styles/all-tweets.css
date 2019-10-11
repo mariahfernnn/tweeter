@@ -42,10 +42,6 @@ CSS for single tweet container
   transition: box-shadow .3s ease-in-out;
 }
 
-.tweet:hover #user-handle {
-  visibility: visible;
-}
-
 #hover:hover {
   box-shadow: 0 10px 10px 0 #d7853d;
 }
@@ -65,7 +61,6 @@ CSS for single tweet container
   color: #4056A1;
   font-weight: bold;
   padding: 20px;
-  visibility: hidden;
 }
 
 .footer {
@@ -77,19 +72,34 @@ CSS for single tweet container
   padding-bottom: 10px;
 }
 
+.footer:hover #flag {
+  visibility: visible;
+}
+
+.footer:hover #retweet {
+  visibility: visible;
+}
+
+.footer:hover #heart {
+  visibility: visible;
+}
+
 #flag {
   margin-left: auto;
   margin-right: 1em;
   color: #4056A1;
+  visibility: hidden;
 }
 
 #retweet {
   margin-right: 1em;
   color: #4056A1;
+  visibility: hidden;
 }
 
 #heart {
   color: #4056A1;
+  visibility: hidden;
 }
 
 
