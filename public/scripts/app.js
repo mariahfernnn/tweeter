@@ -15,9 +15,6 @@ const escape =  function(str) {
 Create a function that converts unix time to how long ago a tweet was created
 */
 
-// let sometime = new Date(tweetData.created_at).toLocaleDateString(en-US);
-// console.log("HOW LONG AGO?", sometime);
-
 
 
  /* Task: Implement a createTweetElement function - takes in:
