@@ -11,17 +11,19 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 
-/*
-Create a function that converts unix time to how long ago a tweet was created
+
+/* Task: Implement a createTweetElement function - takes in:
+1. A tweet obj
+2. Returns a tweet <article> element containing the entire HTML structure of the tweet
 */
-
-
-
- /* Task: Implement a createTweetElement function - takes in:
-    1. A tweet obj
-    2. Returns a tweet <article> element containing the entire HTML structure of the tweet
- */
 const createTweetElement = function(tweetData) {
+  /*
+  Convert UNIX time using toLocaleString()
+  */
+  
+  let date = new Date(tweetData.created_at);
+  let tweetDate = date.toLocaleString().replace(/,/g, '').split(" ");
+
   const markup = `
   <section class="tweet" id="hover">
 <form method="GET" action="/tweets/">
@@ -32,7 +34,7 @@ const createTweetElement = function(tweetData) {
   </header>
   <p>${escape(tweetData.content.text)}</p>
   <footer class="footer">
-    <span>${new Date(tweetData.created_at)}</span>
+    <span>${tweetDate[0]}</span>
     <i class="fas fa-flag" id="flag"></i>
     <i class="fas fa-retweet" id="retweet"></i>
     <i class="fas fa-heart" id="heart"></i>
@@ -75,7 +77,7 @@ $(document).ready(function() {
       - The pointer should change appearance on hover so that it is clear to the user that it is clickable
   */
   $("#click-me").click(function () {
-    $(".new-tweets").slideToggle()
+    $(".new-tweets").slideToggle();
   });
 
   const $form = $('#load-more-tweets');
@@ -116,7 +118,7 @@ for fetching tweets from the http://localhost:8080/tweets page
         url: '/tweets',
         type: 'GET',
         dataType: 'JSON'
-      })
+      });
 
       renderTweets(response);
   
@@ -124,8 +126,5 @@ for fetching tweets from the http://localhost:8080/tweets page
       console.log(error);
     }
   }
-
   loadTweets();
 });
-
-
